@@ -95,6 +95,11 @@ An example of training process is as follows:
 python trainer.py -e 1000 -l 0.001 -hs 32 -ts 20 -b 256 -dr 0 -i 50 -s 30 -l2 0 -y 2017 2018 -sn 1
 ```
 
+An example of test with existing models is as follows:
+```
+python trainer.py -e 1000 -l 0.001 -hs 32 -ts 20 -b 256 -dr 0 -i 50 -s 30 -l2 0 -y 2017 2018 -sn 1 -t --test_2019
+```
+
 ## Base Code Repo
 
 VG algorithm is adopted from [https://github.com/pik-copan/pyunicorn](https://github.com/pik-copan/pyunicorn)

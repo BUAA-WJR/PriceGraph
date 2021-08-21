@@ -189,6 +189,12 @@ class Trainer:
         self.emtree.load_state_dict(torch.load(emtree_path, map_location=lambda storage, loc: storage))
         self.output.load_state_dict(torch.load(output_path, map_location=lambda storage, loc: storage))
 
+    def load_model_2019(self, season):
+        emtree_path = '../models/PriceGraph_emtree_S%s.model' % season
+        output_path = '../models/PriceGraph_output_S%s.model' % season
+        self.emtree.load_state_dict(torch.load(emtree_path, map_location=lambda storage, loc: storage))
+        self.output.load_state_dict(torch.load(output_path, map_location=lambda storage, loc: storage))
+
     def test_data(self):
         data = self.test
         y_predict = []
@@ -242,6 +248,9 @@ def getArgParser():
     parser.add_argument(
         '-t', '--test', action='store_true',
         help='train or test')
+    parser.add_argument(
+        '--test_2019', action='store_true',
+        help='test with models for 2019')
     return parser
 
 
@@ -263,7 +272,10 @@ if __name__ == '__main__':
     print(args)
     trainer = Trainer(time_step, hidden_size, lr, batch_size, drop_ratio, split)
     if args.test:
-        trainer.load_model(num_epochs)
+        if args.test_2019:
+            trainer.load_model_2019(Season)
+        else:
+            trainer.load_model(num_epochs)
         trainer.test_data()
     else:
         trainer.train_minibatch(num_epochs)

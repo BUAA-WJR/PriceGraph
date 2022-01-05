@@ -3,6 +3,8 @@ This repository is the official PyTorch implementation of the experiments in the
 
 Junran Wu, Ke Xu, Xueyuan Chen, Shangzhe Li, Jichang Zhao. Price graphs: Utilizing the structural information of financial time series for stock prediction
 
+[Information Sciences](https://www.sciencedirect.com/science/article/pii/S0020025521013104) 
+
 [arXiv](https://arxiv.org/abs/2106.02522)
 
 ## Installation
@@ -110,5 +112,22 @@ Struc2vec implementation is adopted from [https://github.com/shenweichen/GraphEm
 
 DARNN implementation in PyTorch is adopted from [https://github.com/ysn2233/attentioned-dual-stage-stock-prediction](https://github.com/ysn2233/attentioned-dual-stage-stock-prediction)
 
+## Citation
 
+If you use this code for you research, please cite our paper.
+
+```
+@article{wu2022price,
+	title = {Price graphs: Utilizing the structural information of financial time series for stock prediction},
+	journal = {Information Sciences},
+	volume = {588},
+	pages = {405-424},
+	year = {2022},
+	issn = {0020-0255},
+	doi = {https://doi.org/10.1016/j.ins.2021.12.089},
+	url = {https://www.sciencedirect.com/science/article/pii/S0020025521013104},
+	author = {Junran Wu and Ke Xu and Xueyuan Chen and Shangzhe Li and Jichang Zhao},
+	keywords = {Stock prediction, Complex network, Time series graph, Graph embedding, Structure information},
+}
+```
 
